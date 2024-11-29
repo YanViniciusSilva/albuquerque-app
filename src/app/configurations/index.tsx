@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class Configurations extends Component {
   render() {
     return (
-      <View className="flex-1 justify-center items-center bg-brand-black" >
+      <View className="flex-1 justify-center items-center bg-brand-black mb-24" >
           <Text className="text-center text-2xl text-brand-text font-SedgwickAveDisplay">
             Comming soon...
           </Text>

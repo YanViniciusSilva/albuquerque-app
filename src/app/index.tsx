@@ -13,6 +13,7 @@ import Loading from "./components/components/loading";
 import BudgetDetails from "./budgets/budget-details/[id]";
 
 import "../styles/global.css"
+import { View } from "react-native";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,31 +28,32 @@ export default function App() {
     return (<Loading/>);
   }
 
-
   return (
     <NavigationContainer>
-      <Stack.Navigator 
-        initialRouteName='root'
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen 
-          options={{
-            ...headerOptions,
-            title: 'Albuquerque App',
-          }}
-          name="root" 
-          component={Tabs} 
-        />
-        <Stack.Screen 
-          options={{
-            ...headerOptions,
-            title: 'Detalhes',
-          }} 
-          name="details"
+      <View className="flex-1 bg-brand-black">      
+        <Stack.Navigator 
+          initialRouteName='root'
+          screenOptions={{ headerShown: false }}
         >
-          {(props) => <BudgetDetails route={props.route}/>}
-        </Stack.Screen>
-      </Stack.Navigator>
+          <Stack.Screen 
+            options={{
+              ...headerOptions,
+              title: 'Albuquerque App',
+            }}
+            name="root" 
+            component={Tabs} 
+          />
+          <Stack.Screen 
+            options={{
+              ...headerOptions,
+              title: 'Detalhes',
+            }} 
+            name="details"
+          >
+            {(props) => <BudgetDetails route={props.route}/>}
+          </Stack.Screen>
+        </Stack.Navigator>
+      </View>
     </NavigationContainer>
   );
 }
