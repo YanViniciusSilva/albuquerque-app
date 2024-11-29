@@ -64,7 +64,7 @@ export default class BudgetsList extends Component<{ navigation: any }> {
 
     return (
         <ScrollView alwaysBounceVertical={true} horizontal={false} className="flex-1 flex-col bg-brand-black px-3 py-3" >
-          <View className='flex-1 flex-col bg-transparent mb-5'>
+          <View className='flex-1 flex-col bg-transparent mb-24'>
           {
             budgets.map((budget: Budget, index) => (
               <TouchableOpacity 
