@@ -14,6 +14,7 @@ import BudgetDetails from "./budgets/budget-details/[id]";
 
 import "../styles/global.css"
 import { View } from "react-native";
+import { SplashScreen } from "expo-router";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,8 @@ export default function App() {
   if (!fonts) {
     return (<Loading/>);
   }
+
+  SplashScreen.hideAsync();
 
   return (
     <NavigationContainer>
